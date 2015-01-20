@@ -31,6 +31,6 @@ export default React.createClass({
 
         return href
             ? <a href={href} className={cls} {...props}></a>
-            : <button className={cls} {...props}></button>;
+            : <button className={cls} disabled={disabled} {...props}></button>;
     }
 });
