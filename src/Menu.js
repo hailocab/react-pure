@@ -6,13 +6,15 @@ export default React.createClass({
 
     propTypes: {
         horizontal: React.PropTypes.bool,
-        open: React.PropTypes.bool
+        open: React.PropTypes.bool,
+        trigger: React.PropTypes.oneOf(['click', 'enter'])
     },
 
     getDefaultProps() {
         return {
             horizontal: false,
-            open: false
+            open: false,
+            trigger: 'click'
         };
     },
 
@@ -30,8 +32,12 @@ export default React.createClass({
         this.setState({open: false});
     },
 
+    handleClick() {
+        this.setState({open: !this.state.open});
+    },
+
     render() {
-        let {className, horizontal, open, ...props} = this.props;
+        let {className, horizontal, open, trigger, ...props} = this.props;
         let cls = joinClasses(
             'pure-menu', className,
             horizontal && 'pure-menu-horizontal',
@@ -39,8 +45,13 @@ export default React.createClass({
         );
 
         if (!open) {
-            props.onMouseEnter = this.handleEnter;
-            props.onMouseLeave = this.handleLeave;
+            if (trigger === 'enter') {
+                props.onMouseEnter = this.handleEnter;
+                props.onMouseLeave = this.handleLeave;
+            }
+            else {
+                props.onClick = this.handleClick;
+            }
         }
 
         return <div className={cls} {...props} />;
