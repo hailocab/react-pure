@@ -1,0 +1,36 @@
+{
+  "name": "react-pure",
+  "version": "0.1.0",
+  "description": "React components using Pure CSS",
+  "main": "lib/index.js",
+  "scripts": {
+    "clean": "rm -Rf ./lib",
+    "compile": "npm run clean && 6to5 --experimental src --out-dir lib",
+    "watch": "6to5 --experimental src --watch --out-dir lib",
+    "test": "jest ./lib",
+    "start": "npm run compile && npm test",
+    "onchange": "onchange 'lib/*.js' 'lib/**/*.js' -- npm test",
+    "dev": "npm run watch & npm run onchange",
+    "prepublish": "npm ls && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hailocab/react-pure.git"
+  },
+  "keywords": [
+    "react-component",
+    "pure",
+    "css"
+  ],
+  "license": "Apache 2",
+  "bugs": {
+    "url": "https://github.com/hailocab/react-pure/issues"
+  },
+  "homepage": "https://github.com/hailocab/react-pure",
+  "devDependencies": {
+    "6to5": "^2.13.3",
+    "jest-cli": "^0.2.1",
+    "onchange": "0.0.2",
+    "react": "^0.12.2"
+  }
+}
