@@ -20,14 +20,14 @@ export default React.createClass({
 
     render() {
         var {className, size, sm, md, lg, xl, ...props} = this.props;
-        var cls = joinClasses([
+        var cls = joinClasses(
             'pure-u-'  + size.replace('/', '-'),
             sm && 'pure-u-sm-'  + sm.replace('/', '-'),
             md && 'pure-u-md-'  + md.replace('/', '-'),
             lg && 'pure-u-lg-'  + lg.replace('/', '-'),
             xl && 'pure-u-xl-'  + xl.replace('/', '-'),
             className
-        ]);
+        );
 
         return <div className={cls} {...props}></div>;
     }

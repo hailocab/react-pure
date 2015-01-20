@@ -21,14 +21,13 @@ export default React.createClass({
 
     render() {
         var {className, href, active, disabled, primary, size, ...props} = this.props;
-        var cls = joinClasses([
-            'pure-button',
+        var cls = joinClasses(
+            'pure-button', className,
             active && 'pure-button-active',
             disabled && 'pure-button-disabled',
             primary && 'pure-button-primary',
-            size && 'pure-button-' + size,
-            className
-        ]);
+            size && 'pure-button-' + size
+        );
 
         return href
             ? <a href={href} className={cls} {...props}></a>
