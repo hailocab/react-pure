@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="react-pure : Pure CSS components built with React">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>react-pure</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/hailocab/react-pure">View on GitHub</a>
+
+          <h1 id="project_title">react-pure</h1>
+          <h2 id="project_tagline">Pure CSS components built with React</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/hailocab/react-pure/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/hailocab/react-pure/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="react-pure" class="anchor" href="#react-pure" aria-hidden="true"><span class="octicon octicon-link"></span></a>react-pure</h1>
+
+<p><a href="http://facebook.github.io/react/">React</a> components using <a href="http://purecss.io/">Pure CSS</a></p>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h2>
+
+<div class="highlight highlight-bash"><pre>npm install react-pure</pre></div>
+
+<p>React is also required as a peer dependency.</p>
+
+<h2>
+<a id="utils" class="anchor" href="#utils" aria-hidden="true"><span class="octicon octicon-link"></span></a>Utils</h2>
+
+<h3>
+<a id="joinclasses" class="anchor" href="#joinclasses" aria-hidden="true"><span class="octicon octicon-link"></span></a>joinClasses</h3>
+
+<p>Reduces its arguments to a single string separating values with spaces and filtering out falsy ones.</p>
+
+<p>Example:</p>
+
+<div class="highlight highlight-js"><pre>joinClasses(<span class="pl-s1"><span class="pl-pds">'</span>react-pure<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>component<span class="pl-pds">'</span></span>); <span class="pl-c">// 'react-pure component'</span>
+joinClasses(<span class="pl-s1"><span class="pl-pds">'</span>react-pure<span class="pl-pds">'</span></span>, <span class="pl-c1">undefined</span>, <span class="pl-c1">false</span> <span class="pl-k">&amp;&amp;</span> <span class="pl-s1"><span class="pl-pds">'</span>super<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>component<span class="pl-pds">'</span></span>); <span class="pl-c">// 'react-pure component'</span></pre></div>
+
+<p>A common use case is to add the <code>className</code> property:</p>
+
+<div class="highlight highlight-js"><pre><span class="pl-s">let</span> MyComponent <span class="pl-k">=</span> React.createClass({
+    render() {
+        <span class="pl-s">let</span> {className, isActive, ...props} <span class="pl-k">=</span> <span class="pl-v">this</span>.props;
+        <span class="pl-s">let</span> cls <span class="pl-k">=</span> joinClasses(<span class="pl-s1"><span class="pl-pds">'</span>myComponent<span class="pl-pds">'</span></span>, isActive <span class="pl-k">&amp;&amp;</span> <span class="pl-s1"><span class="pl-pds">'</span>active<span class="pl-pds">'</span></span>, className);
+
+        <span class="pl-k">return</span> <span class="pl-k">&lt;</span>div className<span class="pl-k">=</span>{cls} {...props} /<span class="pl-k">&gt;</span>;
+    }
+});</pre></div>
+
+<h2>
+<a id="components" class="anchor" href="#components" aria-hidden="true"><span class="octicon octicon-link"></span></a>Components</h2>
+
+<h3>
+<a id="button" class="anchor" href="#button" aria-hidden="true"><span class="octicon octicon-link"></span></a>Button</h3>
+
+<p><a href="http://purecss.io/buttons/">Pure CSS reference</a></p>
+
+<h4>
+<a id="properties" class="anchor" href="#properties" aria-hidden="true"><span class="octicon octicon-link"></span></a>Properties</h4>
+
+<ul>
+<li>
+<code>active: bool</code> (optional, defaults to <em>false</em>): adds the <code>pure-button-active</code> class.</li>
+<li>
+<code>disabled: bool</code> (optional, defaults to <em>false</em>): adds the <code>pure-button-disabled</code> class.</li>
+<li>
+<code>primary: bool</code> (optional, defaults to <em>false</em>): adds the <code>pure-button-primary</code> class.</li>
+<li>
+<code>href: string</code> (optional): if set, renders a <code>&lt;a&gt;</code> element instead of <code>&lt;button&gt;</code>.</li>
+<li>
+<code>size: string</code>: (optional, one of <code>xsmall</code>, <code>small</code>, <code>large</code>, <code>xlarge</code>): if set, adds the <code>pure-button-{size}</code> class.</li>
+</ul>
+
+<h3>
+<a id="cell" class="anchor" href="#cell" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cell</h3>
+
+<p>A Cell is an element of a <a href="http://purecss.io/grids/">Pure CSS Grid</a></p>
+
+<h4>
+<a id="properties-1" class="anchor" href="#properties-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Properties</h4>
+
+<ul>
+<li>
+<code>size: string</code> (optional, defaults to <em>1</em>): adds the <code>pure-u-{size}</code> class. You can use the <code>/</code> separator instead of <code>-</code>, ex: <code>&lt;Cell size='1/3'&gt;</code>.</li>
+<li>
+<code>sm: string</code> (optional): adds the <code>pure-u-sm-{sm}</code> class.</li>
+<li>
+<code>md: string</code> (optional): adds the <code>pure-u-md-{md}</code> class.</li>
+<li>
+<code>lg: string</code> (optional): adds the <code>pure-u-lg-{lg}</code> class.</li>
+<li>
+<code>xl: string</code> (optional): adds the <code>pure-u-xl-{xl}</code> class.</li>
+</ul>
+
+<h3>
+<a id="menu" class="anchor" href="#menu" aria-hidden="true"><span class="octicon octicon-link"></span></a>Menu</h3>
+
+<p><a href="http://purecss.io/menus/">Pure CSS reference</a></p>
+
+<h4>
+<a id="properties-2" class="anchor" href="#properties-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Properties</h4>
+
+<ul>
+<li>
+<code>horizontal: bool</code> (optional, defaults to <em>false</em>): adds the <code>pure-menu-horizontal</code> class.</li>
+<li>
+<code>open: bool</code> (optional, defaults to <em>false</em>): adds the <code>pure-menu-open</code> class.</li>
+</ul>
+
+<h3>
+<a id="table" class="anchor" href="#table" aria-hidden="true"><span class="octicon octicon-link"></span></a>Table</h3>
+
+<p><a href="http://purecss.io/tables/">Pure CSS reference</a></p>
+
+<h4>
+<a id="properties-3" class="anchor" href="#properties-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Properties</h4>
+
+<ul>
+<li>
+<code>bordered: bool</code> (optional, defaults to <em>false</em>): adds the <code>pure-table-bordered</code> class.</li>
+<li>
+<code>horizontal: bool</code> (optional, defaults to <em>false</em>): adds the <code>pure-table-horizontal</code> class.</li>
+<li>
+<code>striped: bool</code> (optional, defaults to <em>false</em>): adds the <code>pure-table-striped</code> class.</li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Apache 2.0<br>
+Copyright 2014 Hailo</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">react-pure maintained by <a href="https://github.com/hailocab">hailocab</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
