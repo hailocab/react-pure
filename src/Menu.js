@@ -13,8 +13,7 @@ export default React.createClass({
     getDefaultProps() {
         return {
             horizontal: false,
-            open: false,
-            trigger: 'click'
+            open: false
         };
     },
 
@@ -49,7 +48,7 @@ export default React.createClass({
                 props.onMouseEnter = this.handleEnter;
                 props.onMouseLeave = this.handleLeave;
             }
-            else {
+            else if (trigger === 'click') {
                 props.onClick = this.handleClick;
             }
         }
