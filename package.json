@@ -27,6 +27,9 @@
     "url": "https://github.com/hailocab/react-pure/issues"
   },
   "homepage": "https://github.com/hailocab/react-pure",
+  "peerDependencies": {
+    "react": "^0.12.2"
+  },
   "devDependencies": {
     "6to5": "^2.13.5",
     "jest-cli": "^0.2.1",

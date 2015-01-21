@@ -6,7 +6,7 @@ react-pure
 ## Install
 
 ```bash
-npm install hailocab/react-pure
+npm install react-pure
 ```
 
 React is also required as a peer dependency.
