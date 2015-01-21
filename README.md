@@ -1,7 +1,7 @@
 react-pure
 ==========
 
-React components using Pure CSS
+[React](http://facebook.github.io/react/) components using [Pure CSS](http://purecss.io/)
 
 ## Install
 
@@ -9,16 +9,18 @@ React components using Pure CSS
 npm install hailocab/react-pure
 ```
 
+React is also required as a peer dependency.
+
 ## Utils
 
 ### joinClasses
 
-Merges an Array of Strings to a single String with spaces, filtering out falsy values.
+Reduces its arguments to a single string separating values with spaces and filtering out falsy ones.
 
 Example:
 ```js
-joinClasses('react-pure', 'component']); // 'react-pure component'
-joinClasses(['react-pure', undefined, false && 'super', 'component']); // 'react-pure component'
+joinClasses('react-pure', 'component'); // 'react-pure component'
+joinClasses('react-pure', undefined, false && 'super', 'component'); // 'react-pure component'
 ```
 
 A common use case is to add the `className` property:
