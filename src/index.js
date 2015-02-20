@@ -5,4 +5,4 @@ import Table from './Table';
 
 import joinClasses from './utils/joinClasses';
 
-export {Button, Cell, Menu, Table, joinClasses};
+export default {Button, Cell, Menu, Table, joinClasses};

@@ -1,11 +1,11 @@
 jest.dontMock('../Table');
 jest.dontMock('../utils/joinClasses');
 
-describe('Table', () => {
-    import React from 'react/addons';
-    import Table from '../Table';
-    let {TestUtils} = React.addons;
+import React from 'react/addons';
+import Table from '../Table';
+let {TestUtils} = React.addons;
 
+describe('Table', () => {
     it('renders a table with class `pure-table` by default', () => {
         let doc = TestUtils.renderIntoDocument(<Table className='my-table' />);
         let el = TestUtils.findRenderedDOMComponentWithTag(doc, 'table');

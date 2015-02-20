@@ -5,11 +5,11 @@
   "main": "lib/index.js",
   "scripts": {
     "clean": "rm -Rf ./lib",
-    "compile": "npm run clean && 6to5 --experimental src --out-dir lib",
-    "watch": "6to5 --experimental src --watch --out-dir lib",
-    "test": "jest ./lib",
+    "compile": "npm run clean && babel --experimental src --out-dir lib",
+    "watch": "babel --experimental src --watch --out-dir lib",
+    "test": "jest --coverage ./lib",
     "start": "npm run compile && npm test",
-    "onchange": "onchange 'lib/*.js' 'lib/**/*.js' -- npm test",
+    "onchange": "onchange 'lib/*.js' 'lib/**/*.js' -- jest ./lib",
     "dev": "npm run watch & npm run onchange",
     "prepublish": "npm ls && npm test"
   },
@@ -31,9 +31,9 @@
     "react": "^0.12.2"
   },
   "devDependencies": {
-    "6to5": "^2.13.5",
-    "jest-cli": "^0.2.1",
-    "onchange": "0.0.2",
+    "babel": "^4.3.0",
+    "jest-cli": "^0.4.0",
+    "onchange": "^0.2.0",
     "react": "^0.12.2"
   },
   "jest": {

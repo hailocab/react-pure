@@ -1,11 +1,11 @@
 jest.dontMock('../Button');
 jest.dontMock('../utils/joinClasses');
 
-describe('Button', () => {
-    import React from 'react/addons';
-    import Button from '../Button';
-    let {TestUtils} = React.addons;
+import React from 'react/addons';
+import Button from '../Button';
+let {TestUtils} = React.addons;
 
+describe('Button', () => {
     it('renders a button by default', () => {
         let doc = TestUtils.renderIntoDocument(<Button />);
         let el = TestUtils.findRenderedDOMComponentWithTag(doc, 'button');

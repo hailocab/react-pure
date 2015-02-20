@@ -1,11 +1,11 @@
 jest.dontMock('../Cell');
 jest.dontMock('../utils/joinClasses');
 
-describe('Cell', () => {
-    import React from 'react/addons';
-    import Cell from '../Cell';
-    let {TestUtils} = React.addons;
+import React from 'react/addons';
+import Cell from '../Cell';
+let {TestUtils} = React.addons;
 
+describe('Cell', () => {
     it('renders a div with class `pure-u-1` by default', () => {
         let doc = TestUtils.renderIntoDocument(<Cell className='my-cell' />);
         let el = TestUtils.findRenderedDOMComponentWithTag(doc, 'div');
