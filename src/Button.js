@@ -1,27 +1,10 @@
 import React from 'react';
-import joinClasses from './utils/joinClasses';
+import classNames from 'classnames';
 
-export default React.createClass({
-    displayName: 'PureButton',
-
-    propTypes: {
-        active: React.PropTypes.bool,
-        disabled: React.PropTypes.bool,
-        primary: React.PropTypes.bool,
-        size: React.PropTypes.oneOf(['xsmall', 'small', 'large', 'xlarge'])
-    },
-
-    getDefaultProps() {
-        return {
-            active: false,
-            disabled: false,
-            primary: false
-        };
-    },
-
+export default class PureButton extends React.Component {
     render() {
-        var {className, href, active, disabled, primary, size, ...props} = this.props;
-        var cls = joinClasses(
+        const {className, href, active, disabled, primary, size, ...props} = this.props;
+        const cls = classNames(
             'pure-button', className,
             active && 'pure-button-active',
             disabled && 'pure-button-disabled',
@@ -30,7 +13,20 @@ export default React.createClass({
         );
 
         return href
-            ? <a href={href} className={cls} {...props}></a>
-            : <button className={cls} disabled={disabled} {...props}></button>;
+            ? <a href={href} className={cls} {...props} />
+            : <button className={cls} disabled={disabled} {...props} />;
     }
-});
+}
+
+PureButton.propTypes = {
+    active: React.PropTypes.bool,
+    disabled: React.PropTypes.bool,
+    primary: React.PropTypes.bool,
+    size: React.PropTypes.oneOf(['xsmall', 'small', 'large', 'xlarge'])
+};
+
+PureButton.defaultProps = {
+    active: false,
+    disabled: false,
+    primary: false
+};

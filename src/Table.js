@@ -1,26 +1,10 @@
 import React from 'react';
-import joinClasses from './utils/joinClasses';
+import classNames from 'classnames';
 
-export default React.createClass({
-    displayName: 'PureTable',
-
-    propTypes: {
-        bordered: React.PropTypes.bool,
-        horizontal: React.PropTypes.bool,
-        striped: React.PropTypes.bool
-    },
-
-    getDefaultProps() {
-        return {
-            bordered: false,
-            horizontal: false,
-            striped: false
-        };
-    },
-
+export default class PureTable extends React.Component {
     render() {
-        var {className, bordered, horizontal, striped, ...props} = this.props;
-        var cls = joinClasses(
+        const {className, bordered, horizontal, striped, ...props} = this.props;
+        const cls = classNames(
             'pure-table', className,
             bordered && 'pure-table-bordered',
             horizontal && 'pure-table-horizontal',
@@ -29,4 +13,16 @@ export default React.createClass({
 
         return <table className={cls} {...props} />;
     }
-});
+};
+
+PureTable.propTypes = {
+    bordered: React.PropTypes.bool,
+    horizontal: React.PropTypes.bool,
+    striped: React.PropTypes.bool
+};
+
+PureTable.defaultProps = {
+    bordered: false,
+    horizontal: false,
+    striped: false
+};

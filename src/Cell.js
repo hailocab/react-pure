@@ -1,34 +1,32 @@
 import React from 'react';
-import joinClasses from './utils/joinClasses';
+import classNames from 'classnames';
 
-export default React.createClass({
-    displayName: 'PureCell',
+const normalizeSize = (s = '') => s.toString().replace('/', '-');
 
-    propTypes: {
-        size: React.PropTypes.string,
-        sm: React.PropTypes.string,
-        md: React.PropTypes.string,
-        lg: React.PropTypes.string,
-        xl: React.PropTypes.string
-    },
-
-    getDefaultProps() {
-        return {
-            size: '1'
-        };
-    },
-
+export default class PureCell extends React.Component {
     render() {
-        var {className, size, sm, md, lg, xl, ...props} = this.props;
-        var cls = joinClasses(
-            'pure-u-'  + size.replace('/', '-'),
-            sm && 'pure-u-sm-'  + sm.replace('/', '-'),
-            md && 'pure-u-md-'  + md.replace('/', '-'),
-            lg && 'pure-u-lg-'  + lg.replace('/', '-'),
-            xl && 'pure-u-xl-'  + xl.replace('/', '-'),
+        const {className, size, sm, md, lg, xl, ...props} = this.props;
+        const cls = classNames(
+            'pure-u-' + normalizeSize(size),
+            sm && 'pure-u-sm-' + normalizeSize(sm),
+            md && 'pure-u-md-' + normalizeSize(md),
+            lg && 'pure-u-lg-' + normalizeSize(lg),
+            xl && 'pure-u-xl-' + normalizeSize(xl),
             className
         );
 
-        return <div className={cls} {...props}></div>;
+        return <div className={cls} {...props} />;
     }
-});
+}
+
+PureCell.propTypes = {
+    size: React.PropTypes.string,
+    sm: React.PropTypes.string,
+    md: React.PropTypes.string,
+    lg: React.PropTypes.string,
+    xl: React.PropTypes.string
+};
+
+PureCell.defaultProps = {
+    size: '1'
+};

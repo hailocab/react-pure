@@ -1,7 +1,7 @@
 react-pure
 ==========
 
-[React](http://facebook.github.io/react/) components using [Pure CSS](http://purecss.io/)
+[React](http://facebook.github.io/react/) components using [Pure CSS](http://purecss.io/).  
 
 ## Install
 
@@ -10,30 +10,6 @@ npm install react-pure
 ```
 
 React is also required as a peer dependency.
-
-## Utils
-
-### joinClasses
-
-Reduces its arguments to a single string separating values with spaces and filtering out falsy ones.
-
-Example:
-```js
-joinClasses('react-pure', 'component'); // 'react-pure component'
-joinClasses('react-pure', undefined, false && 'super', 'component'); // 'react-pure component'
-```
-
-A common use case is to add the `className` property:
-```js
-let MyComponent = React.createClass({
-    render() {
-        let {className, isActive, ...props} = this.props;
-        let cls = joinClasses('myComponent', isActive && 'active', className);
-
-        return <div className={cls} {...props} />;
-    }
-});
-```
 
 ## Components
 
@@ -68,7 +44,18 @@ A Cell is an element of a [Pure CSS Grid](http://purecss.io/grids/)
 #### Properties
 
 - `horizontal: bool` (optional, defaults to *false*): adds the `pure-menu-horizontal` class.
-- `open: bool` (optional, defaults to *false*): adds the `pure-menu-open` class.
+- `scrollable: bool` (optional, defaults to *false*): adds the `pure-menu-scrollable` class.
+
+### MenuItem
+
+Renders a `<li>` node with the `pure-menu-item` class by default.
+
+#### Properties
+
+- `allowHover: bool` (optional, defaults to *false*): adds the `pure-menu-allow-hover` class.
+- `disabled: bool` (optional, defaults to *false*): adds the `pure-menu-disabled` class.
+- `hasChildren: bool` (optional, defaults to *false*): adds the `pure-menu-has-children` class.
+- `selected: bool` (optional, defaults to *false*): adds the `pure-menu-selected` class.
 
 ### Table
 
@@ -79,6 +66,21 @@ A Cell is an element of a [Pure CSS Grid](http://purecss.io/grids/)
 - `bordered: bool` (optional, defaults to *false*): adds the `pure-table-bordered` class.
 - `horizontal: bool` (optional, defaults to *false*): adds the `pure-table-horizontal` class.
 - `striped: bool` (optional, defaults to *false*): adds the `pure-table-striped` class.
+
+## Changelog
+
+### v0.2.0 (in progress)
+
+This version is meant to be used with React v0.13 and Pure v0.6.
+
+- Added `MenuItem` element.
+- Added `scrollable` property to `Menu` (Pure v0.6).
+- Removed `open` property from `Menu` (Pure v0.6).
+- Removed the `joinClasses()` util, [classnames](https://www.npmjs.com/package/classnames) is used internally instead.
+
+### v0.1.0 (21/01/15)
+
+Initial release, using React v0.12 and Pure v0.5.
 
 ## License
 

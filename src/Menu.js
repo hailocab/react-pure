@@ -1,58 +1,25 @@
 import React from 'react';
-import joinClasses from './utils/joinClasses';
+import classNames from 'classnames';
 
-export default React.createClass({
-    displayName: 'PureMenu',
-
-    propTypes: {
-        horizontal: React.PropTypes.bool,
-        open: React.PropTypes.bool,
-        trigger: React.PropTypes.oneOf(['click', 'enter'])
-    },
-
-    getDefaultProps() {
-        return {
-            horizontal: false,
-            open: false
-        };
-    },
-
-    getInitialState() {
-        return {
-            open: this.props.open
-        };
-    },
-
-    handleEnter() {
-        this.setState({open: true});
-    },
-
-    handleLeave() {
-        this.setState({open: false});
-    },
-
-    handleClick() {
-        this.setState({open: !this.state.open});
-    },
-
+export default class PureMenu extends React.Component {
     render() {
-        let {className, horizontal, open, trigger, ...props} = this.props;
-        let cls = joinClasses(
+        const {className, horizontal, scrollable, ...props} = this.props;
+        const cls = classNames(
             'pure-menu', className,
             horizontal && 'pure-menu-horizontal',
-            this.state.open && 'pure-menu-open'
+            scrollable && 'pure-menu-scrollable'
         );
-
-        if (!open) {
-            if (trigger === 'enter') {
-                props.onMouseEnter = this.handleEnter;
-                props.onMouseLeave = this.handleLeave;
-            }
-            else if (trigger === 'click') {
-                props.onClick = this.handleClick;
-            }
-        }
 
         return <div className={cls} {...props} />;
     }
-});
+}
+
+PureMenu.propTypes = {
+    horizontal: React.PropTypes.bool,
+    scrollable: React.PropTypes.bool
+};
+
+PureMenu.defaultProps = {
+    horizontal: false,
+    scrollable: false
+};
