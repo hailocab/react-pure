@@ -69,7 +69,7 @@ Renders a `<li>` node with the `pure-menu-item` class by default.
 
 ## Changelog
 
-### v0.2.0 (in progress)
+### v0.2.0 (11/03/15)
 
 This version is meant to be used with React v0.13 and Pure v0.6.
 
@@ -85,4 +85,4 @@ Initial release, using React v0.12 and Pure v0.5.
 ## License
 
 Apache 2.0  
-Copyright 2014 Hailo
+Copyright 2015 Hailo
