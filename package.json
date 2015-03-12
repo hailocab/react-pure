@@ -1,6 +1,6 @@
 {
   "name": "react-pure",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "React components using Pure CSS",
   "main": "lib/index.js",
   "scripts": {

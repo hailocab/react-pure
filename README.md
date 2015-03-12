@@ -69,6 +69,10 @@ Renders a `<li>` node with the `pure-menu-item` class by default.
 
 ## Changelog
 
+### v0.2.2 (12/03/15)
+
+Publish source in npm package so that apps can use their own transpiler.
+
 ### v0.2.0 (11/03/15)
 
 This version is meant to be used with React v0.13 and Pure v0.6.
