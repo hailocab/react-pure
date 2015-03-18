@@ -1,12 +1,12 @@
 {
   "name": "react-pure",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "React components using Pure CSS",
   "main": "lib/index.js",
   "scripts": {
     "clean": "rm -Rf ./lib",
-    "compile": "npm run clean && babel --experimental src --out-dir lib",
-    "watch": "babel --experimental src --watch --out-dir lib",
+    "compile": "npm run clean && babel --experimental --optional runtime --out-dir lib src",
+    "watch": "babel --watch --experimental --optional runtime --out-dir lib src",
     "test": "jest --coverage ./lib",
     "start": "npm run compile && npm test",
     "onchange": "onchange 'lib/*.js' 'lib/**/*.js' -- jest ./lib",
@@ -28,19 +28,21 @@
   },
   "homepage": "https://github.com/hailocab/react-pure",
   "dependencies": {
+    "babel-runtime": "^4.7.16",
     "classnames": "^1.1.4"
   },
   "peerDependencies": {
     "react": "^0.13.0"
   },
   "devDependencies": {
-    "babel": "^4.7.3",
+    "babel": "^4.7.16",
     "jest-cli": "^0.4.0",
     "onchange": "^1.0.0",
     "react": "^0.13.0"
   },
   "jest": {
     "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/babel-runtime",
       "<rootDir>/node_modules/classnames",
       "<rootDir>/node_modules/react"
     ]
