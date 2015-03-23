@@ -69,6 +69,10 @@ Renders a `<li>` node with the `pure-menu-item` class by default.
 
 ## Changelog
 
+### v0.2.4 (23/03/15)
+
+Fixed `MenuItem` export.
+
 ### v0.2.3 (18/03/15)
 
 Added [babel-runtime](https://babeljs.io/docs/usage/runtime/) as a dependency to avoid duplicate declarations in modules.
