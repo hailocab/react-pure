@@ -1,8 +1,8 @@
-jest.dontMock('../Cell');
-
 import React from 'react/addons';
-import Cell from '../Cell';
 const {TestUtils} = React.addons;
+
+jest.dontMock('../Cell');
+const Cell = require('../Cell');
 
 describe('Cell', () => {
     it('renders a div with class `pure-u-1` by default', () => {

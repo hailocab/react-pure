@@ -23,7 +23,6 @@ React is also required as a peer dependency.
 - `disabled: bool` (optional, defaults to *false*): adds the `pure-button-disabled` class.
 - `primary: bool` (optional, defaults to *false*): adds the `pure-button-primary` class.
 - `href: string` (optional): if set, renders a `<a>` element instead of `<button>`.
-- `size: string`: (optional, one of `xsmall`, `small`, `large`, `xlarge`): if set, adds the `pure-button-{size}` class.
 
 ### Cell
 
@@ -68,6 +67,11 @@ Renders a `<li>` node with the `pure-menu-item` class by default.
 - `striped: bool` (optional, defaults to *false*): adds the `pure-table-striped` class.
 
 ## Changelog
+
+### v0.3.0 (15/04/15)
+
+- Updated Babel to v5.
+- Removed `size` property from `Button` as it is not a default Pure class.
 
 ### v0.2.4 (23/03/15)
 

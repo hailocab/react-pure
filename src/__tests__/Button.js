@@ -1,8 +1,8 @@
-jest.dontMock('../Button');
-
 import React from 'react/addons';
-import Button from '../Button';
 const {TestUtils} = React.addons;
+
+jest.dontMock('../Button');
+const Button = require('../Button');
 
 describe('Button', () => {
     it('renders a button by default', () => {
@@ -50,29 +50,5 @@ describe('Button', () => {
         const component = TestUtils.renderIntoDocument(<Button primary />);
         const node = React.findDOMNode(component);
         expect(node.className).toBe('pure-button pure-button-primary');
-    });
-
-    it('adds the `pure-button-xsmall` class if the `size` property if set to `xsmall`', function() {
-        const component = TestUtils.renderIntoDocument(<Button size='xsmall' />);
-        const node = React.findDOMNode(component);
-        expect(node.className).toBe('pure-button pure-button-xsmall');
-    });
-
-    it('adds the `pure-button-small` class if the `size` property if set to `small`', function() {
-        const component = TestUtils.renderIntoDocument(<Button size='small' />);
-        const node = React.findDOMNode(component);
-        expect(node.className).toBe('pure-button pure-button-small');
-    });
-
-    it('adds the `pure-button-large` class if the `size` property if set to `large`', function() {
-        const component = TestUtils.renderIntoDocument(<Button size='large' />);
-        const node = React.findDOMNode(component);
-        expect(node.className).toBe('pure-button pure-button-large');
-    });
-
-    it('adds the `pure-button-xlarge` class if the `size` property if set to `xlarge`', function() {
-        const component = TestUtils.renderIntoDocument(<Button size='xlarge' />);
-        const node = React.findDOMNode(component);
-        expect(node.className).toBe('pure-button pure-button-xlarge');
     });
 });

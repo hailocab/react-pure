@@ -1,8 +1,8 @@
-jest.dontMock('../Table');
-
 import React from 'react/addons';
-import Table from '../Table';
 const {TestUtils} = React.addons;
+
+jest.dontMock('../Table');
+const Table = require('../Table');
 
 describe('Table', () => {
     it('renders a table with class `pure-table` by default', () => {

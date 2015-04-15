@@ -1,8 +1,8 @@
-jest.dontMock('../Menu');
-
 import React from 'react/addons';
-import Menu from '../Menu';
 const {TestUtils} = React.addons;
+
+jest.dontMock('../Menu');
+const Menu = require('../Menu');
 
 describe('Menu', () => {
     it('renders a div with class `pure-menu` by default', () => {

@@ -1,6 +1,5 @@
 jest.dontMock('../index');
-
-import Pure from '../index';
+const Pure = require('../index');
 
 describe('lib', () => {
     it('exposes the `Button`, `Cell`, `Menu`, `MenuItem` and `Table` components', () => {

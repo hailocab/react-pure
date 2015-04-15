@@ -1,8 +1,8 @@
-jest.dontMock('../MenuItem');
-
 import React from 'react/addons';
-import MenuItem from '../MenuItem';
 const {TestUtils} = React.addons;
+
+jest.dontMock('../MenuItem');
+const MenuItem = require('../MenuItem');
 
 describe('MenuItem', () => {
     it('renders a li with class `pure-menu-item` by default', () => {

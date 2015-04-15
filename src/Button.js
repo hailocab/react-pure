@@ -3,13 +3,12 @@ import classNames from 'classnames';
 
 export default class PureButton extends React.Component {
     render() {
-        const {className, href, active, disabled, primary, size, ...props} = this.props;
+        const {className, href, active, disabled, primary, ...props} = this.props;
         const cls = classNames(
             'pure-button', className,
             active && 'pure-button-active',
             disabled && 'pure-button-disabled',
-            primary && 'pure-button-primary',
-            size && 'pure-button-' + size
+            primary && 'pure-button-primary'
         );
 
         return href
@@ -21,8 +20,7 @@ export default class PureButton extends React.Component {
 PureButton.propTypes = {
     active: React.PropTypes.bool,
     disabled: React.PropTypes.bool,
-    primary: React.PropTypes.bool,
-    size: React.PropTypes.oneOf(['xsmall', 'small', 'large', 'xlarge'])
+    primary: React.PropTypes.bool
 };
 
 PureButton.defaultProps = {
