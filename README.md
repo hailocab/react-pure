@@ -11,6 +11,17 @@ npm install react-pure
 
 React is also required as a peer dependency.
 
+## Getting started
+
+Include these components in your React app like this:
+
+    var ReactPure = require('react-pure');
+    var PureButton = ReactPure.Button;
+    var PureCell = ReactPure.Cell;
+    var PureMenuItem = ReactPure.MenuItem;
+    var PureMenu = ReactPure.Menu;
+    var PureTable = ReactPure.Table;
+
 ## Components
 
 ### Button
