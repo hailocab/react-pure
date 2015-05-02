@@ -13,7 +13,7 @@ export default class PureTable extends React.Component {
 
         return <table className={cls} {...props} />;
     }
-};
+}
 
 PureTable.propTypes = {
     bordered: React.PropTypes.bool,
