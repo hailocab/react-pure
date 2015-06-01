@@ -1,5 +1,5 @@
 import React from 'react/addons';
-const {TestUtils} = React.addons;
+const { TestUtils } = React.addons;
 
 jest.dontMock('../MenuItem');
 const MenuItem = require('../MenuItem');

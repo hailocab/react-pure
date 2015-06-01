@@ -17,7 +17,7 @@ The components documented below are exposed as CommonJS modules and can be acces
 
 ```js
 // ES6
-import {Button, Cell} from 'react-pure';
+import { Button, Cell } from 'react-pure';
 
 // CommonJS
 var Button = require('react-pure').Button;

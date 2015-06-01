@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 
-export default class PureMenu extends React.Component {
+export default class PureMenu extends Component {
+    static propTypes = {
+        horizontal: PropTypes.bool,
+        scrollable: PropTypes.bool
+    };
+
+    static defaultProps = {
+        horizontal: false,
+        scrollable: false
+    };
+
     render() {
-        const {className, horizontal, scrollable, ...props} = this.props;
+        const { className, horizontal, scrollable, ...props } = this.props;
         const cls = classNames(
             'pure-menu', className,
             horizontal && 'pure-menu-horizontal',
@@ -13,13 +23,3 @@ export default class PureMenu extends React.Component {
         return <div className={cls} {...props} />;
     }
 }
-
-PureMenu.propTypes = {
-    horizontal: React.PropTypes.bool,
-    scrollable: React.PropTypes.bool
-};
-
-PureMenu.defaultProps = {
-    horizontal: false,
-    scrollable: false
-};

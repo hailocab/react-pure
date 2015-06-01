@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 
-export default class PureButton extends React.Component {
+export default class PureButton extends Component {
+    static propTypes = {
+        active: PropTypes.bool,
+        disabled: PropTypes.bool,
+        primary: PropTypes.bool
+    };
+
+    static defaultProps = {
+        active: false,
+        disabled: false,
+        primary: false
+    };
+
     render() {
-        const {className, href, active, disabled, primary, ...props} = this.props;
+        const { className, href, active, disabled, primary, ...props } = this.props;
         const cls = classNames(
             'pure-button', className,
             active && 'pure-button-active',
@@ -16,15 +28,3 @@ export default class PureButton extends React.Component {
             : <button className={cls} disabled={disabled} {...props} />;
     }
 }
-
-PureButton.propTypes = {
-    active: React.PropTypes.bool,
-    disabled: React.PropTypes.bool,
-    primary: React.PropTypes.bool
-};
-
-PureButton.defaultProps = {
-    active: false,
-    disabled: false,
-    primary: false
-};

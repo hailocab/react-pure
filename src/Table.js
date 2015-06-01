@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 
-export default class PureTable extends React.Component {
+export default class PureTable extends Component {
+    static propTypes = {
+        bordered: PropTypes.bool,
+        horizontal: PropTypes.bool,
+        striped: PropTypes.bool
+    };
+
+    static defaultProps = {
+        bordered: false,
+        horizontal: false,
+        striped: false
+    };
+
     render() {
-        const {className, bordered, horizontal, striped, ...props} = this.props;
+        const { className, bordered, horizontal, striped, ...props } = this.props;
         const cls = classNames(
             'pure-table', className,
             bordered && 'pure-table-bordered',
@@ -13,16 +25,4 @@ export default class PureTable extends React.Component {
 
         return <table className={cls} {...props} />;
     }
-};
-
-PureTable.propTypes = {
-    bordered: React.PropTypes.bool,
-    horizontal: React.PropTypes.bool,
-    striped: React.PropTypes.bool
-};
-
-PureTable.defaultProps = {
-    bordered: false,
-    horizontal: false,
-    striped: false
-};
+}
