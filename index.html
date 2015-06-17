@@ -44,28 +44,21 @@
 <p>React is also required as a peer dependency.</p>
 
 <h2>
-<a id="utils" class="anchor" href="#utils" aria-hidden="true"><span class="octicon octicon-link"></span></a>Utils</h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<h3>
-<a id="joinclasses" class="anchor" href="#joinclasses" aria-hidden="true"><span class="octicon octicon-link"></span></a>joinClasses</h3>
+<p>The components documented below are exposed as CommonJS modules and can be accessed in the following ways:</p>
 
-<p>Reduces its arguments to a single string separating values with spaces and filtering out falsy ones.</p>
+<div class="highlight highlight-js"><pre><span class="pl-c">// ES6</span>
+<span class="pl-k">import</span> { Button, Cell } <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react-pure<span class="pl-pds">'</span></span>;
 
-<p>Example:</p>
+<span class="pl-c">// CommonJS</span>
+<span class="pl-k">var</span> <span class="pl-c1">Button</span> <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>react-pure<span class="pl-pds">'</span></span>).<span class="pl-c1">Button</span>;
+<span class="pl-c">// or</span>
+<span class="pl-k">var</span> Pure <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>react-pure<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> <span class="pl-c1">Button</span> <span class="pl-k">=</span> Pure.<span class="pl-c1">Button</span>;
 
-<div class="highlight highlight-js"><pre>joinClasses(<span class="pl-s1"><span class="pl-pds">'</span>react-pure<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>component<span class="pl-pds">'</span></span>); <span class="pl-c">// 'react-pure component'</span>
-joinClasses(<span class="pl-s1"><span class="pl-pds">'</span>react-pure<span class="pl-pds">'</span></span>, <span class="pl-c1">undefined</span>, <span class="pl-c1">false</span> <span class="pl-k">&amp;&amp;</span> <span class="pl-s1"><span class="pl-pds">'</span>super<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>component<span class="pl-pds">'</span></span>); <span class="pl-c">// 'react-pure component'</span></pre></div>
-
-<p>A common use case is to add the <code>className</code> property:</p>
-
-<div class="highlight highlight-js"><pre><span class="pl-s">let</span> MyComponent <span class="pl-k">=</span> React.createClass({
-    render() {
-        <span class="pl-s">let</span> {className, isActive, ...props} <span class="pl-k">=</span> <span class="pl-v">this</span>.props;
-        <span class="pl-s">let</span> cls <span class="pl-k">=</span> joinClasses(<span class="pl-s1"><span class="pl-pds">'</span>myComponent<span class="pl-pds">'</span></span>, isActive <span class="pl-k">&amp;&amp;</span> <span class="pl-s1"><span class="pl-pds">'</span>active<span class="pl-pds">'</span></span>, className);
-
-        <span class="pl-k">return</span> <span class="pl-k">&lt;</span>div className<span class="pl-k">=</span>{cls} {...props} /<span class="pl-k">&gt;</span>;
-    }
-});</pre></div>
+<span class="pl-c">// Direct access to the module</span>
+<span class="pl-k">var</span> <span class="pl-c1">Button</span> <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>react-pure/lib/Button<span class="pl-pds">'</span></span>);</pre></div>
 
 <h2>
 <a id="components" class="anchor" href="#components" aria-hidden="true"><span class="octicon octicon-link"></span></a>Components</h2>
@@ -87,8 +80,6 @@ joinClasses(<span class="pl-s1"><span class="pl-pds">'</span>react-pure<span cla
 <code>primary: bool</code> (optional, defaults to <em>false</em>): adds the <code>pure-button-primary</code> class.</li>
 <li>
 <code>href: string</code> (optional): if set, renders a <code>&lt;a&gt;</code> element instead of <code>&lt;button&gt;</code>.</li>
-<li>
-<code>size: string</code>: (optional, one of <code>xsmall</code>, <code>small</code>, <code>large</code>, <code>xlarge</code>): if set, adds the <code>pure-button-{size}</code> class.</li>
 </ul>
 
 <h3>
@@ -160,7 +151,7 @@ Copyright 2014 Hailo</p>
       </footer>
     </div>
 
-    
+
 
   </body>
 </html>
