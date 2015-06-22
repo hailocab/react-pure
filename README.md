@@ -3,13 +3,19 @@ react-pure
 
 [React](http://facebook.github.io/react/) components using [Pure CSS](http://purecss.io/).  
 
-## Install
+## Installation
+
+### npm + browserify/webpack
 
 ```bash
 npm install react-pure
 ```
 
 React is also required as a peer dependency.
+
+### Others
+
+You can download UMD builds from the [dist folder](https://github.com/hailocab/react-pure/tree/master/dist). The components are accessible in the `window.ReactPure` object.
 
 ## Usage
 
@@ -86,37 +92,10 @@ Renders a `<li>` node with the `pure-menu-item` class by default.
 
 ## Changelog
 
-### v0.3.0 (15/04/15)
-
-- Updated Babel to v5.
-- Removed `size` property from `Button` as it is not a default Pure class.
-
-### v0.2.4 (23/03/15)
-
-Fixed `MenuItem` export.
-
-### v0.2.3 (18/03/15)
-
-Added [babel-runtime](https://babeljs.io/docs/usage/runtime/) as a dependency to avoid duplicate declarations in modules.
-
-### v0.2.2 (12/03/15)
-
-Publish source in npm package so that apps can use their own transpiler.
-
-### v0.2.0 (11/03/15)
-
-This version is meant to be used with React v0.13 and Pure v0.6.
-
-- Added `MenuItem` element.
-- Added `scrollable` property to `Menu` (Pure v0.6).
-- Removed `open` property from `Menu` (Pure v0.6).
-- Removed the `joinClasses()` util, [classnames](https://www.npmjs.com/package/classnames) is used internally instead.
-
-### v0.1.0 (21/01/15)
-
-Initial release, using React v0.12 and Pure v0.5.
+See [CHANGELOG](https://github.com/hailocab/react-pure/blob/master/CHANGELOG.md) file.
 
 ## License
 
 Apache 2.0  
 Copyright 2015 Hailo
+See [LICENSE](https://github.com/hailocab/react-pure/blob/master/LICENSE) file.

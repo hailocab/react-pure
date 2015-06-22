@@ -4,11 +4,16 @@
   "description": "React components using Pure CSS",
   "main": "lib/index.js",
   "scripts": {
-    "clean": "rm -Rf ./lib",
-    "compile": "npm run clean && babel --out-dir lib src",
+    "clean:lib": "rm -Rf ./lib",
+    "clean:dist": "rm -Rf ./dist",
+    "clean": "npm run clean:lib & npm run clean:dist",
+    "compile:lib": "babel --out-dir lib src",
+    "compile:dist": "webpack src/index.js dist/react-pure.js & webpack -p src/index.js dist/react-pure.min.js",
+    "compile": "npm run compile:lib & npm run compile:dist",
+    "build": "npm run clean && npm run compile",
     "watch": "babel --watch --out-dir lib src",
     "test": "jest --coverage ./lib",
-    "start": "npm run compile && npm test",
+    "start": "npm run build && npm test",
     "onchange": "onchange 'lib/*.js' 'lib/**/*.js' -- jest ./lib",
     "dev": "npm run watch & npm run onchange",
     "prepublish": "npm ls && npm test"
@@ -28,17 +33,21 @@
   },
   "homepage": "https://github.com/hailocab/react-pure",
   "dependencies": {
-    "babel-runtime": "^5.4.7",
+    "babel-runtime": "^5.6.2",
     "classnames": "^2.1.2"
   },
   "peerDependencies": {
     "react": "^0.13.0"
   },
   "devDependencies": {
-    "babel": "^5.4.7",
-    "jest-cli": "^0.4.5",
+    "babel": "^5.6.2",
+    "babel-core": "^5.6.2",
+    "babel-loader": "^5.1.4",
+    "jest-cli": "^0.4.13",
+    "node-libs-browser": "^0.5.2",
     "onchange": "^1.1.0",
-    "react": "^0.13.0"
+    "react": "^0.13.0",
+    "webpack": "^1.9.11"
   },
   "jest": {
     "unmockedModulePathPatterns": [
