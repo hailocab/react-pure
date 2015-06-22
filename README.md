@@ -15,7 +15,8 @@ React is also required as a peer dependency.
 
 ### Others
 
-You can download UMD builds from the [dist folder](https://github.com/hailocab/react-pure/tree/master/dist). The components are accessible in the `window.ReactPure` object.
+You can download UMD builds from the [dist folder](https://github.com/hailocab/react-pure/tree/master/dist).  
+The components are accessible in the `window.ReactPure` object.
 
 ## Usage
 
@@ -97,5 +98,5 @@ See [CHANGELOG](https://github.com/hailocab/react-pure/blob/master/CHANGELOG.md)
 ## License
 
 Apache 2.0  
-Copyright 2015 Hailo
+Copyright 2015 Hailo  
 See [LICENSE](https://github.com/hailocab/react-pure/blob/master/LICENSE) file.
