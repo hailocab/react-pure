@@ -1,5 +1,5 @@
 module.exports = {
-    title: 'Rect-Pure',
+    title: 'React-Pure',
     routes: [
         '/'
     ]
