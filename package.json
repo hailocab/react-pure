@@ -32,13 +32,13 @@
     "classnames": "^1.1.4"
   },
   "peerDependencies": {
-    "react": "^0.13.0"
+    "react": "^0.14.0"
   },
   "devDependencies": {
     "babel": "^5.1.9",
     "jest-cli": "^0.4.0",
     "onchange": "^1.1.0",
-    "react": "^0.13.0"
+    "react": "^0.14.0"
   },
   "jest": {
     "unmockedModulePathPatterns": [
