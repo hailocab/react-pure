@@ -1,10 +1,8 @@
-'use strict';
+jest.dontMock('../src/index');
+import * as Pure from '../src/index';
 
-jest.dontMock('../index');
-var Pure = require('../index');
-
-describe('lib', function () {
-    it('exposes the `Button`, `Cell`, `Menu`, `MenuItem` and `Table` components', function () {
+describe('lib', () => {
+    it('exposes the `Button`, `Cell`, `Menu`, `MenuItem` and `Table` components', () => {
         expect(Pure.Button).toBeDefined();
         expect(Pure.Cell).toBeDefined();
         expect(Pure.Menu).toBeDefined();

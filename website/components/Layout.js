@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import { RouteHandler } from 'react-router';
 
 import { Menu, MenuItem } from '../../lib';
 import { navbar, navbarMenu } from './style.css';
 
 export default class Layout extends Component {
     render() {
-        const { title, ...props } = this.props;
-
+        const { app } = this.props;
         return (
             <html>
                 <head>
-                    <title>{title}</title>
-                    <link rel='stylesheet' href='http://yui.yahooapis.com/pure/0.6.0/pure-min.css' />
+                    <title>React-Pure</title>
+                    <link rel='stylesheet' href='//yui.yahooapis.com/pure/0.6.0/pure-min.css' />
                     <link rel='stylesheet' href='allstyles.css' />
                 </head>
                 <body>
@@ -50,7 +48,7 @@ export default class Layout extends Component {
                             </MenuItem>
                         </Menu>
                     </div>
-                    <RouteHandler {...props} />
+                    <div id='app' dangerouslySetInnerHTML={{__html: app}} />
                     <script src='bundle.js' />
                 </body>
             </html>

@@ -1,11 +1,11 @@
-import React, { findDOMNode, Component } from 'react';
+import React, { Component } from 'react';
 import hl from 'highlight.js';
 
 import monokai from './monokai_sublime.css';
 
 export default class Highlight extends Component {
     highlight() {
-        hl.highlightBlock(findDOMNode(this.refs.code));
+        hl.highlightBlock(this.code);
     }
 
     componentDidMount() {
@@ -17,6 +17,13 @@ export default class Highlight extends Component {
     }
 
     render() {
-        return <pre className='hljs'><code ref='code' {...this.props} /></pre>;
+        return (
+          <pre className='hljs'>
+            <code ref={e => {
+              this.code = e;
+            }}
+            {...this.props} />
+          </pre>
+        );
     }
 }
