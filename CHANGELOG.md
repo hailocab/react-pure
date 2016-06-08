@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.4.0
+
+- Removed React v0.13 support / added v15 support.
+- Updated Babel to v6.
+- Updated dependencies.
+
 ## v0.3.1 (01/06/15)
 
 Updated dependencies and code style.

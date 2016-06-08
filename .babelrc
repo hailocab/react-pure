@@ -1,8 +1,9 @@
 {
-  "optional": [
-    "es7.classProperties",
-    "es7.exportExtensions",
-    "es7.objectRestSpread",
-    "runtime"
+  "presets": ["es2015", "react", "stage-0"],
+  "plugins": [
+    ["transform-runtime", {
+      "polyfill": false,
+      "regenerator": false
+    }]
   ]
 }

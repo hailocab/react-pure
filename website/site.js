@@ -1,18 +1,16 @@
 import React from 'react';
-import Router from 'react-router';
+import { render } from 'react-dom';
+import { renderToStaticMarkup, renderToString } from 'react-dom/server';
 
-import data from './data';
-import routes from './routes';
+import Layout from './components/Layout';
+import Index from './components/IndexPage';
 
 if (typeof document !== 'undefined') {
-    Router.run(routes, Router.HistoryLocation, Handler => {
-        React.render(React.createElement(Handler, data), document);
-    });
+    render(<Index />, document.getElementById('app'));
 }
 
 export default (locals, cb) => {
-    Router.run(routes, locals.path, Handler => {
-        const html = React.renderToString(React.createElement(Handler, locals));
-        cb(null, '<!DOCTYPE html>' + html);
-    });
+    const app = renderToString(<Index />);
+    const html = renderToStaticMarkup(<Layout app={app} />);
+    cb(null, '<!DOCTYPE html>' + html);
 };

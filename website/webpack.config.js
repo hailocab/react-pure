@@ -1,8 +1,6 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 
-var data = require('./data');
-
 module.exports = {
     entry: './website/site.js',
     output: {
@@ -18,6 +16,6 @@ module.exports = {
     },
     plugins: [
         new ExtractTextPlugin('allstyles.css', {allChunks: true}),
-        new StaticSiteGeneratorPlugin('bundle.js', data.routes, data)
+        new StaticSiteGeneratorPlugin('bundle.js', ['/index.html'])
     ]
 };
