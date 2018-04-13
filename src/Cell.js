@@ -1,5 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 const normalizeSize = (s = '') => s.toString().replace('/', '-');
 
